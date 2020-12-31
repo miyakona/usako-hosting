@@ -1,0 +1,3 @@
+app.env=development
+app.is_notfy=false
+gcp.project_number=843320520391

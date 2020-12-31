@@ -1,0 +1,3 @@
+app.env=sample
+app.is_notfy=false
+gcp.project_number=

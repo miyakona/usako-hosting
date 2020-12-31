@@ -71,3 +71,5 @@ node_modules/
 functions/.nuxt
 .firebaserc
 public/assets*
+credential-dev.json
+.runtimeconfig.json

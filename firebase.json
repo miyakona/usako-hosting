@@ -1,6 +1,7 @@
 {
   "functions": {
-    "predeploy": "npm --prefix \"$RESOURCE_DIR\" run build"
+    "predeploy": "npm --prefix \"$RESOURCE_DIR\" run build",
+    "source": "functions"
   },
   "hosting": {
     "public": "public",
@@ -15,5 +16,19 @@
         "function": "ssrapp"
       }
     ]
+  },
+  "emulators": {
+    "functions": {
+      "port": 5001
+    },
+    "hosting": {
+      "port": 5000
+    },
+    "pubsub": {
+      "port": 8085
+    },
+    "ui": {
+      "enabled": true
+    }
   }
 }
