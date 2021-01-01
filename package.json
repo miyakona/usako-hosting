@@ -1,0 +1,41 @@
+{
+  "name": "usako",
+  "version": "1.0.0",
+  "author": "miyakona <miyakona38572@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "lint-src": "eslint src --fix",
+    "lint-functions": "eslint functions --fix",
+    "lint-all": "yarn lint-src && yarn lint-functions",
+    "config-local": "firebase functions:config:get > .runtimeconfig.json",
+    "config-dev": "firebase functions:config:set `cat .config.dev| tr \"\n\r\" \" \"` && yarn config-local",
+    "config-prd": "firebase functions:config:set `cat .config.prd| tr \"\n\r\" \" \"` && yarn config-local"
+  },
+  "engines": {
+    "node": "12"
+  },
+  "lint-staged": {
+    "*.{ts,js}": [ "eslint --fix" ]
+  },
+  "husky": {
+    "hooks": { "pre-commit": "lint-staged" }
+  },
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.11.1",
+    "@typescript-eslint/parser": "^4.11.1",
+    "eslint": "^7.12.1",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.3.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-vue": "^7.4.0",
+    "husky": "^4.3.6",
+    "lint-staged": "^10.5.3",
+    "prettier": "^2.2.1",
+    "typescript": "^4.1.3"
+  }
+}
