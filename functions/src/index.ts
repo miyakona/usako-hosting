@@ -1,16 +1,18 @@
-import * as functions from 'firebase-functions';
-const { Nuxt } = require('nuxt');
-const express = require('express');
+import * as functions from 'firebase-functions'
+import * as express from 'express'
+import { Configuration } from '@nuxt/types'
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { Nuxt } = require('nuxt')
 
 /**
  * Hosting の準備
  */
-const app = express();
-const nuxtConfig = {
+const app = express()
+const nuxtConfig: Configuration = {
   dev: false,
   ssr: true,
   srcDir: '../.nuxt',
-};
+}
 
 /**
  * Functionsの準備
@@ -35,10 +37,11 @@ function registerFunctions(items: FunctionListItem[]): void {
 /**
  * export
  */
-const nuxt = new Nuxt(nuxtConfig);
+const nuxt = new Nuxt(nuxtConfig)
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 app.use(async (req: any, res: any) => {
   return await nuxt.render(req, res)
 })
-exports.ssrapp = functions.https.onRequest(app);
+exports.ssrapp = functions.https.onRequest(app)
 
 registerFunctions(functionList)
