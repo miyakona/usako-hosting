@@ -39,7 +39,7 @@ jobs:
         run: yarn install
 
       - name: Run linter 👀
-        run: yarn lint-all
+        run: yarn lint
 
       # TODO: 実装
       # - name: Run tests 🧪
@@ -78,15 +78,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn
 
-      - run: yarn install && yarn build-nuxt
-        working-directory: ./src
-
-      - run: yarn install
-        working-directory: ./functions
-
       - name: deploy config for dev
         uses: w9jds/firebase-action@master
         with:
+          # @see package.json `config:dev`
           args: functions:config:set `cat .config.dev | tr "\n\r" " "` --project ${{ env.project-id }}
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN_DEV }}
@@ -135,15 +130,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
 
-      - run: yarn install && yarn build-nuxt
-        working-directory: ./src
-
-      - run: yarn install
-        working-directory: ./functions
-
       - name: deploy config for prd
         uses: w9jds/firebase-action@master
         with:
+          # @see package.json `config:prd`
           args: functions:config:set `cat .config.prd | tr "\n\r" " "` --project ${{ env.project-id }}
         env:
           # TODO: 本番 TOKEN 登録

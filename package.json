@@ -4,25 +4,59 @@
   "author": "miyakona <miyakona38572@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "lint-src": "eslint src --fix",
-    "lint-functions": "eslint functions --fix",
-    "lint-all": "yarn lint-src && yarn lint-functions",
-    "config-local": "firebase functions:config:get > .runtimeconfig.json",
-    "config-dev": "firebase functions:config:set `cat .config.dev| tr \"\n\r\" \" \"` && yarn config-local",
-    "config-prd": "firebase functions:config:set `cat .config.prd| tr \"\n\r\" \" \"` && yarn config-local"
+    "lint": "yarn functions:lint && yarn hosting:lint",
+    "config:dev": "firebase functions:config:set `cat .config.dev| tr \"\n\r\" \" \"` && yarn config-local",
+    "config:prd": "firebase functions:config:set `cat .config.prd| tr \"\n\r\" \" \"` && yarn config-local",
+    "config:local": "yarn config:dev && firebase functions:config:get > .runtimeconfig.json",
+    "functions:install": "cd ./functions && yarn install",
+    "functions:build": "tsc --project ./functions/tsconfig.json",
+    "functions:serve": "yarn functions:build && firebase emulators:start --only functions",
+    "functions:shell": "yarn functions:build && firebase functions:shell",
+    "functions:start": "yarn functions:shell",
+    "functions:deploy": "firebase deploy --only functions",
+    "functions:logs": "firebase functions:log",
+    "functions:lint": "eslint functions --fix",
+    "functions:deploy-init": "yarn functions:install && yarn functions:build",
+    "hosting:dev": "nuxt-ts src",
+    "hosting:build": "nuxt-ts build src",
+    "hosting:deploy-init": "yarn hosting:build && cp -R ./src/.nuxt/ ./functions/.nuxt && rm -rf ./public/* && cp -R ./src/.nuxt/dist/client ./public/assets && cp -R ./src/static/* ./public/assets && yarn functions:deploy-init",
+    "hosting:start": "nuxt-ts start src",
+    "hosting:generate": "nuxt-ts start generate",
+    "hosting:lint": "eslint src --fix"
   },
   "engines": {
     "node": "12"
   },
   "lint-staged": {
-    "*.{ts,js}": [ "eslint --fix" ]
+    "*.{ts,js,vue}": [
+      "eslint --fix"
+    ]
   },
   "husky": {
-    "hooks": { "pre-commit": "lint-staged" }
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "@google-cloud/secret-manager": "^3.2.3",
+    "@line/bot-sdk": "^7.2.0",
+    "@nuxt/typescript-runtime": "^2.0.0",
+    "@nuxtjs/axios": "^5.12.4",
+    "@nuxtjs/pwa": "^3.3.3",
+    "@nuxtjs/vuetify": "^1.11.2",
+    "axios": "^0.21.1",
+    "core-js": "^3.8.1",
+    "express": "^4.17.1",
+    "nuxt": "^2.14.12",
+    "ts-loader": "^8.0.13",
+    "vuex": "^3.6.0"
+  },
   "devDependencies": {
+    "@nuxt/types": "^2.14.12",
+    "@nuxt/typescript-build": "^2.0.3",
+    "@nuxtjs/proxy": "^2.1.0",
+    "@types/sprintf-js": "^1.1.2",
     "@typescript-eslint/eslint-plugin": "^4.11.1",
     "@typescript-eslint/parser": "^4.11.1",
     "eslint": "^7.12.1",
@@ -33,6 +67,7 @@
     "eslint-plugin-prettier": "^3.3.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-vue": "^7.4.0",
+    "firebase-functions-test": "^0.2.3",
     "husky": "^4.3.6",
     "lint-staged": "^10.5.3",
     "prettier": "^2.2.1",
