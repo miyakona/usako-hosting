@@ -39,7 +39,7 @@
   },
   "private": true,
   "dependencies": {
-    "@google-cloud/secret-manager": "^3.2.3",
+    "@google-cloud/secret-manager": "^3.3.0",
     "@line/bot-sdk": "^7.2.0",
     "@nuxt/typescript-runtime": "^2.0.0",
     "@nuxtjs/axios": "^5.12.4",
