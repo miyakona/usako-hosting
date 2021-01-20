@@ -46,7 +46,7 @@
     "@nuxtjs/pwa": "^3.3.3",
     "@nuxtjs/vuetify": "^1.11.2",
     "axios": "^0.21.1",
-    "core-js": "^3.8.1",
+    "core-js": "^3.8.3",
     "express": "^4.17.1",
     "nuxt": "^2.14.12",
     "ts-loader": "^8.0.13",
