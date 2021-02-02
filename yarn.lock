@@ -927,13 +927,13 @@
     serialize-javascript "^5.0.1"
     upath "^2.0.1"
 
-"@nuxt/cli-edge@^2.15.0-26827251.8edafbeb":
-  version "2.15.0-26867561.0fd5f7df"
-  resolved "https://registry.yarnpkg.com/@nuxt/cli-edge/-/cli-edge-2.15.0-26867561.0fd5f7df.tgz#a139c5ff26f865ffc65c22b2f9e9d040db7fd812"
-  integrity sha512-oj34q727doTDI4zxzotPXffJQxieRtqgEkdTGF43KXpafDXfFrKie5J8Br4hjqywUfkHI7zvjjtDlMOr/H/VBQ==
+"@nuxt/cli-edge@^2.15.0-26869002.7e3a78fb":
+  version "2.15.0-26869002.7e3a78fb"
+  resolved "https://registry.yarnpkg.com/@nuxt/cli-edge/-/cli-edge-2.15.0-26869002.7e3a78fb.tgz#223ff4ce276d3536a8fc835288e46c95bab65fc1"
+  integrity sha512-tvJP2/TfE0v7nxkdDT5+Mvbu+R1YpvsRVxqEaVROMmYeToKwuW/CEtvCJUYC9WumonSFqHllBcgQD4aSWqWnoA==
   dependencies:
-    "@nuxt/config-edge" "2.15.0-26867561.0fd5f7df"
-    "@nuxt/utils-edge" "2.15.0-26867561.0fd5f7df"
+    "@nuxt/config-edge" "2.15.0-26869002.7e3a78fb"
+    "@nuxt/utils-edge" "2.15.0-26869002.7e3a78fb"
     boxen "^5.0.0"
     chalk "^4.1.0"
     compression "^1.7.4"
@@ -998,12 +998,12 @@
     upath "^2.0.1"
     vue-template-compiler "^2.6.12"
 
-"@nuxt/config-edge@2.15.0-26867561.0fd5f7df":
-  version "2.15.0-26867561.0fd5f7df"
-  resolved "https://registry.yarnpkg.com/@nuxt/config-edge/-/config-edge-2.15.0-26867561.0fd5f7df.tgz#edc210e3b1f37bde33b0c341441bd8754f518484"
-  integrity sha512-/VJCrXmmfi8t+jrmdQ7TkTedToEM//ioeh9ci5O++/UcSVfIqErTxXHpbIds2J2mTtQW7Hafi1Cb8kpYtwCUCA==
+"@nuxt/config-edge@2.15.0-26869002.7e3a78fb":
+  version "2.15.0-26869002.7e3a78fb"
+  resolved "https://registry.yarnpkg.com/@nuxt/config-edge/-/config-edge-2.15.0-26869002.7e3a78fb.tgz#a1ec1970fdf0582c8f4ba69e0879f0d7505b7c2b"
+  integrity sha512-cFVgIxIics9aby40yNcux24ZdDVGsayrHZqpMwWlqfQN8Xn0FecjYtYpAC+xQ3Vr2Wael6mg2SyH1GROSNsTwA==
   dependencies:
-    "@nuxt/utils-edge" "2.15.0-26867561.0fd5f7df"
+    "@nuxt/utils-edge" "2.15.0-26869002.7e3a78fb"
     consola "^2.15.0"
     defu "^3.2.2"
     destr "^1.1.0"
@@ -1159,10 +1159,10 @@
   resolved "https://registry.yarnpkg.com/@nuxt/ufo/-/ufo-0.5.4.tgz#2e1428e2c947cc559d566c27786525bf0f40fbc8"
   integrity sha512-JZOGDlt2BvLCBmLhrchhRJ6tP9PBfSWLdsHC+JVJ5Qp8/hT/2u61cSsLS30zUOwcPRaQ3y2oHNkEiKJ5v90iEQ==
 
-"@nuxt/utils-edge@2.15.0-26867561.0fd5f7df":
-  version "2.15.0-26867561.0fd5f7df"
-  resolved "https://registry.yarnpkg.com/@nuxt/utils-edge/-/utils-edge-2.15.0-26867561.0fd5f7df.tgz#46b94514ff4a25f1aef560fa352b723de13614f7"
-  integrity sha512-AwGwTm06R6oLAwrWo4rL/IkMNrFL46ovX8/bkq/z8F1/iKJ5gVsxfRXwJ0ZRnOyxIAujwvyfwc9RlfoEIbcXmw==
+"@nuxt/utils-edge@2.15.0-26869002.7e3a78fb":
+  version "2.15.0-26869002.7e3a78fb"
+  resolved "https://registry.yarnpkg.com/@nuxt/utils-edge/-/utils-edge-2.15.0-26869002.7e3a78fb.tgz#cc73719caa86b6cd87b9283589bf177539cb4a3b"
+  integrity sha512-VhXBx+59Hmsr9m+PFJofgdo0xN+Trhs7lhMqRC9LnLMiF4mesPwZv5CqS6ZK4fQYTsn3KFEJ8awficseB2MMLA==
   dependencies:
     consola "^2.15.0"
     create-require "^1.1.1"
