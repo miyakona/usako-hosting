@@ -42,7 +42,7 @@
   "private": true,
   "dependencies": {},
   "devDependencies": {
-    "@nuxt/cli-edge": "^2.15.0-26827251.8edafbeb",
+    "@nuxt/cli-edge": "^2.15.0-26876193.fffb1a19",
     "@nuxt/typescript-runtime": "^2.0.0",
     "@typescript-eslint/eslint-plugin": "^4.11.1",
     "@typescript-eslint/parser": "^4.11.1",
